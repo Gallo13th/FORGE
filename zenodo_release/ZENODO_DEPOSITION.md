@@ -1,10 +1,10 @@
 # Zenodo Deposition Record
 
-Status: published (latest: v0.2.0)
+Status: published (latest: v0.3.0)
 
-Zenodo record id: `21131271`
+Zenodo record id: `23883322`
 
-Record URL: https://zenodo.org/records/21131271
+Record URL: https://zenodo.org/records/23883322
 
 API record URL: https://zenodo.org/api/records/21131271
 
@@ -65,7 +65,7 @@ Published through the deposition API (newversion of record 21131271) after
 draft file verification.
 
 
-## Version 0.3.0 (release candidate, 2026-11-02)
+## Version 0.3.0 (published, 2026-11-02)
 
 Target: new version of record `22764225` (concept DOI `10.5281/zenodo.21128513`).
 
@@ -77,9 +77,9 @@ the stable citation target.
 
 Built archives:
 
-- `forge_code_and_models_v0.3.0.tar.gz` (32,955,988 bytes)
-- `forge_paper_source_data_v0.3.0.tar.gz` (159,327,407 bytes)
-- `forge_public_input_manifests_v0.3.0.tar.gz` (12,827,211 bytes)
+- `forge_code_and_models_v0.3.0.tar.gz` (32,956,447 bytes)
+- `forge_paper_source_data_v0.3.0.tar.gz` (159,327,598 bytes)
+- `forge_public_input_manifests_v0.3.0.tar.gz` (12,827,391 bytes)
 
 New in v0.3.0: current Nature Communications manuscript source, final Figure 1
 pipeline, sequence-recovery decomposition and confidence-transport analyses,

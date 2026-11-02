@@ -2,7 +2,7 @@
 
 This directory stages the code, trained models, processed result artifacts and
 figure source data needed for a Zenodo deposition supporting the manuscript
-`FORGE reveals an information spectrum encoded in RNA tertiary-structure geometry`.
+`FORGE decomposes RNA sequence recovery into memorisation, family transfer and residual prediction error`.
 The latest published record is v0.2.0, Zenodo record `22764225` with DOI
 `10.5281/zenodo.22764225`. Version 0.3.0 is the current release for the Nature Communications
 manuscript, published as Zenodo record `23883322` with DOI
