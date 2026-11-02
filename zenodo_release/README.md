@@ -3,8 +3,10 @@
 This directory stages the code, trained models, processed result artifacts and
 figure source data needed for a Zenodo deposition supporting the manuscript
 `FORGE reveals an information spectrum encoded in RNA tertiary-structure geometry`.
-The current public record is Zenodo record `21131271` with DOI
-`10.5281/zenodo.21131271`.
+The latest published record is v0.2.0, Zenodo record `22764225` with DOI
+`10.5281/zenodo.22764225`. Version 0.3.0 is the current release candidate for
+the Nature Communications manuscript; its archives are built but not yet
+published.
 
 The release is organized as a small number of archives rather than as the full
 working tree. The full local `RNKDB` directory contains public PDB/mmCIF caches,
@@ -39,6 +41,10 @@ The script creates:
 - `dist/forge_public_input_manifests_v0.1.0.tar.gz`: public-input manifests,
   chain lists, sequence files, Rfam/OpenKnot-derived small inputs and clustering
   summary files needed to identify the reused public structures and benchmarks.
+
+Version 0.3.0 additionally stages the current `overleaf/source` manuscript
+source and the final Figure 1 pipeline. The large archives remain Zenodo
+objects and should not be committed to GitHub.
 
 The build also writes:
 

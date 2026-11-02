@@ -63,3 +63,25 @@ sequences, forward-folding figures) and the NMI manuscript LaTeX source.
 
 Published through the deposition API (newversion of record 21131271) after
 draft file verification.
+
+
+## Version 0.3.0 (release candidate, 2026-11-02)
+
+Target: new version of record `22764225` (concept DOI `10.5281/zenodo.21128513`).
+
+Status: **archives built, not yet uploaded or published.** New version DOI is
+assigned by Zenodo at publication and must not be guessed.
+
+Built archives:
+
+- `forge_code_and_models_v0.3.0.tar.gz` (32,955,988 bytes)
+- `forge_paper_source_data_v0.3.0.tar.gz` (159,327,407 bytes)
+- `forge_public_input_manifests_v0.3.0.tar.gz` (12,827,211 bytes)
+
+New in v0.3.0: current Nature Communications manuscript source, final Figure 1
+pipeline, sequence-recovery decomposition and confidence-transport analyses,
+family-disjoint in-domain evaluation, final AlphaFold 3 and design-audit source
+data, and updated author list.
+
+Build validation: `manifests/missing_files.tsv` contains only its header.
+Checksums are in `manifests/checksums_sha256.txt`.

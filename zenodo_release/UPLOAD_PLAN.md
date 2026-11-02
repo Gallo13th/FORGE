@@ -7,8 +7,9 @@ trained model parameters and original processed data behind every quantitative
 claim in the manuscript without uploading unrelated local caches or third-party
 repositories.
 
-Current status: the release has been published as Zenodo record `21131271`
-with DOI `10.5281/zenodo.21131271`.
+Current status: v0.2.0 is published as Zenodo record `22764225` with DOI
+`10.5281/zenodo.22764225`. v0.3.0 archives are built and validated; the
+new-version draft is pending a Zenodo token and final publication review.
 
 ## Release structure
 
