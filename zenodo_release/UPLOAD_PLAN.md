@@ -8,8 +8,8 @@ claim in the manuscript without uploading unrelated local caches or third-party
 repositories.
 
 Current status: v0.2.0 is published as Zenodo record `22764225` with DOI
-`10.5281/zenodo.22764225`. v0.3.0 archives are built and validated; the
-new-version draft is pending a Zenodo token and final publication review.
+`10.5281/zenodo.22764225`. v0.3.0 is published as Zenodo record `23883322` with DOI
+`10.5281/zenodo.23883322`; the concept DOI remains `10.5281/zenodo.21128513`.
 
 ## Release structure
 

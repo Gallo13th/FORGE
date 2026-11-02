@@ -69,8 +69,11 @@ draft file verification.
 
 Target: new version of record `22764225` (concept DOI `10.5281/zenodo.21128513`).
 
-Status: **archives built, not yet uploaded or published.** New version DOI is
-assigned by Zenodo at publication and must not be guessed.
+Status: **published 2026-11-02.** Record id `23883322`; DOI
+`10.5281/zenodo.23883322`; concept DOI unchanged `10.5281/zenodo.21128513`.
+The record contains 13 files. The v0.3.0 record supersedes v0.2.0
+(`10.5281/zenodo.22764225`) as the latest version while the concept DOI remains
+the stable citation target.
 
 Built archives:
 
@@ -84,4 +87,5 @@ family-disjoint in-domain evaluation, final AlphaFold 3 and design-audit source
 data, and updated author list.
 
 Build validation: `manifests/missing_files.tsv` contains only its header.
-Checksums are in `manifests/checksums_sha256.txt`.
+Checksums are in `manifests/checksums_sha256.txt`. Record:
+https://zenodo.org/records/23883322

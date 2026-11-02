@@ -35,7 +35,7 @@ version: 0.3.0
 language: eng
 access_right: open
 license: cc-by-4.0
-doi: ''
+doi: 10.5281/zenodo.23883322
 keywords:
 - RNA tertiary structure
 - inverse folding
