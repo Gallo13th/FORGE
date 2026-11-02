@@ -1,0 +1,32 @@
+{
+  "title": "FORGE code, trained models and source data for RNA backbone sequence-recovery diagnostics",
+  "description": "Code, trained model artifacts, processed result tables, public-input manifests and figure source data supporting the manuscript \"FORGE decomposes RNA sequence recovery into memorisation, family transfer and residual prediction error\". Version 0.3.0 adds the Nature Communications manuscript source, the final Figure 1 pipeline, the sequence-recovery decomposition and confidence-transport analyses, the family-disjoint in-domain evaluation, and the final AlphaFold 3 and design-audit source data.",
+  "creators": [
+    {"name": "Gow, Leighton", "affiliation": "Huazhong University of Science and Technology", "orcid": "0009-0004-5597-0781"},
+    {"name": "Li, Jintang", "affiliation": "Institute of Artificial Intelligence, Xiamen University"},
+    {"name": "Tan, Xianhan", "affiliation": "Zhejiang University"},
+    {"name": "Liang, Ke", "affiliation": "National University of Defense Technology"},
+    {"name": "Gui, Ning", "affiliation": "Central South University"},
+    {"name": "Luo, Binli", "affiliation": "Central South University"}
+  ],
+  "upload_type": "dataset",
+  "license": "cc-by-4.0",
+  "version": "0.3.0",
+  "publication_date": "2026-11-02",
+  "keywords": [
+    "RNA tertiary structure",
+    "inverse folding",
+    "XGBoost",
+    "geometric features",
+    "sequence recovery",
+    "source data",
+    "reproducibility",
+    "AlphaFold 3",
+    "forward folding",
+    "RNA design"
+  ],
+  "related_identifiers": [
+    {"relation": "isDerivedFrom", "identifier": "Protein Data Bank, https://www.rcsb.org/"},
+    {"relation": "isDerivedFrom", "identifier": "Eterna OpenKnot benchmark, https://github.com/eternagame/OpenKnotAIDesignData"}
+  ]
+}

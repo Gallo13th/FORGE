@@ -1,0 +1,56 @@
+\section*{Supplementary information}
+Supplementary Information accompanies this paper and contains Supplementary
+Figs.~S1--S18, Supplementary Tables~S1--S18 and Supplementary Notes, including
+the extended controls and per-task denominators summarised here.
+
+\section*{Data availability}
+
+All source RNA structures analysed in this study are publicly available from the
+Protein Data Bank at \url{https://www.rcsb.org/}. The local post-2025 temporal
+test manifest contains 4,135 RNA chains. OpenKnot design data were obtained from
+the Eterna OpenKnot benchmark repository
+(\url{https://github.com/eternagame/OpenKnotAIDesignData}). The processed data
+supporting the figures and tables are available in Zenodo at
+\url{https://doi.org/10.5281/zenodo.22764225}. The record contains
+\texttt{forge\_paper\_source\_data\_v0.1.0.tar.gz}, comprising figure
+source-data files, locked result JSON/CSV/NPY artifacts, baseline predictions,
+OpenKnot score tables and stress-test per-position outputs, and
+\texttt{forge\_public\_input\_manifests\_v0.1.0.tar.gz}, comprising PDB chain
+manifests, sequence files, split tables and small Rfam/OpenKnot-derived inputs
+used to identify the reused public datasets. The same record includes a
+file-level manifest with SHA-256 checksums and a manuscript source-data map
+linking each main and supplementary figure or table to its underlying data
+artifacts.
+
+\section*{Code availability}
+
+The public release includes the FORGE package, training scripts, inference
+scripts, baseline wrappers, figure-generation scripts, trained XGBoost models,
+environment specification, locked result manifests and the exact scripts used to
+generate the figure source-data files in the Zenodo archive
+\texttt{forge\_code\_and\_models\_v0.1.0.tar.gz}:
+\url{https://doi.org/10.5281/zenodo.22764225}. The
+command-line interface exposes \texttt{forge featurize},
+\texttt{forge predict} and \texttt{forge explain}.
+
+\section*{Materials availability}
+
+No new biological materials were generated in this computational study.
+
+\section*{Acknowledgements}
+
+We thank the Eterna community for releasing OpenKnot design data and the
+developers of the PDB, Rfam, ViennaRNA, XGBoost, DSSR and related open-source
+tools. This work received no external funding.
+
+\section*{Author contributions}
+
+L.G., J.L., X.T. and B.L. conceived the study and jointly designed the model.
+L.G. and B.L. designed the model-evaluation experiments. L.G. implemented the
+computational analyses, prepared the figures and drafted the manuscript. All
+authors interpreted the results, revised the manuscript and approved the final
+version.
+
+\section*{Competing interests}
+
+The authors declare no competing interests.

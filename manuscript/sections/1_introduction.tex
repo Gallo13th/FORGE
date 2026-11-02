@@ -1,0 +1,37 @@
+RNA inverse folding maps three-dimensional backbones to candidate
+sequences, linking structural learning to molecular
+design~\citep{townshend2021geometric,tan2024rdesign,huang2024ribodiffusion,joshi2025grnade}.
+Although the expanding collection of experimentally determined RNA structures in the Protein Data Bank~\citep{berman2000protein,kappel2020accelerated} allows testing across increasingly diverse molecules, interpreting model progress requires knowing what a successful prediction actually establishes. A high native sequence recovery score can reflect recall of a repeated training sequence, recognition of a familiar RNA family or geometric constraints that genuinely transfer to an unfamiliar molecule. Disentangling these contributions shifts the evaluation question from how often a model reproduces a deposited sequence to what that recovery reveals about both the learner and the backbone.
+
+RNA geometry offers a tractable setting for this distinction. The
+sugar--phosphate trace and glycosidic anchors encode conformation, helical
+organisation and packing, whereas the deposited nucleotide also reflects
+evolutionary history, base-edge chemistry and molecular context. The same backbone can therefore support some annotations directly while leaving
+others dependent on chemistry or context.
+Base-pairing state~\citep{lu2015dssr} and solvent exposure lie close to
+geometric organisation; chemical-probing reactivity additionally depends on
+nucleotide chemistry and environment~\citep{zubradt2017dms}. Mapping these
+readouts within a common representation can identify which predictions the
+geometry supports and where complementary evidence has the greatest value.
+
+Here we introduce FORGE (Feature-engineered RNA Geometry Evaluation), which
+converts a seven-atom RNA backbone into 935 explicit geometric descriptors.
+Gradient-boosted trees~\citep{chen2016xgboost} translate these descriptors into
+nucleotide probabilities, confidence estimates and sequence--backbone
+compatibility scores. The same 935-feature representation also supports models for base pairing, stacking, solvent exposure and a RibonanzaNet-derived reactivity target. By pairing explicit descriptors with controlled data splits, FORGE acts as a diagnostic probe of structural predictability whose residue-level outputs connect corpus-wide metrics to individual sequence assignments.
+
+The framework addresses three linked questions. First, we dissect sequence
+recovery through temporal evaluation, sequence novelty and family-disjoint
+testing, separating exact-repeat familiarity from family-level transfer and
+residual prediction error. Second, atom-channel, coordinate-frame and
+multi-task analyses locate the predictive signal and map its distribution
+across structural readouts. Calibrated confidence then identifies subsets
+that support reliable nucleotide annotation. Third, native-versus-decoy
+comparisons, experimental design scores and solved AI-designed pseudoknots
+test how these geometric readouts relate to design outcomes.
+
+The design question is especially concrete for experimentally solved AI-designed
+RNA pseudoknots~\citep{townley2026openknot}.
+A solved design permits three separate assessments: reading a sequence from
+its backbone, predicting the fold of that sequence and testing the molecule
+experimentally. Comparing these three tests clarifies what each form of agreement contributes to a design claim. More broadly, by reporting novelty composition, structural readouts and experimental outcomes side by side, FORGE turns sequence recovery from an opaque summary statistic into an interpretable account of model behaviour and backbone-encoded information.

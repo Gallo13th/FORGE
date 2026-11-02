@@ -1,0 +1,3 @@
+47506ea8257650d0705f33fb1fd0cb61b0742072f1102bb02abbd945b359ec89  dist/forge_code_and_models_v0.3.0.tar.gz
+81959a43fd2e4cb8b3440d7f84f0754900945c1412095710d7490fd0d3dfdc4d  dist/forge_paper_source_data_v0.3.0.tar.gz
+1bf753dc809c4e8b338891ab3e376eb6a4a8b7ed115873c9535bca1e84cde1df  dist/forge_public_input_manifests_v0.3.0.tar.gz

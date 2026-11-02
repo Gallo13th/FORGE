@@ -1,0 +1,55 @@
+\PassOptionsToPackage{super}{natbib}
+\documentclass[pdflatex,sn-nature]{sn-jnl}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx,multirow,booktabs,array}
+\usepackage{xcolor,siunitx,adjustbox}
+\input{math_commands.tex}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\graphicspath{{figures/}}
+\raggedbottom
+\emergencystretch=2em
+
+\begin{document}
+
+\title[FORGE decomposes RNA sequence recovery]{FORGE decomposes RNA sequence recovery into memorisation, family transfer and residual prediction error}
+
+\author[1]{Leighton Gow}\email{u201912359@alumni.hust.edu.cn}
+
+\author[2]{Jintang Li}\email{edisonlee@xmu.edu.cn}
+
+\author[3]{Xianhan Tan}\email{txxxl@zuaa.zju.edu.cn}
+
+\author[4]{Ke Liang}\email{liangke22@nudt.edu.cn}
+
+\author*[5]{Ning Gui}\email{ninggui@gmail.com}
+
+\author*[6]{Binli Luo}\email{lblhandsome@gmail.com}
+
+
+\affil[1]{Huazhong University of Science and Technology, Wuhan 430074, China}
+
+\affil[2]{Institute of Artificial Intelligence, Xiamen University, Xiamen 361005, China}
+
+\affil[3]{Zhejiang University, Hangzhou 310058, China}
+
+\affil[4]{National University of Defense Technology, Changsha 410073, China}
+
+\affil*[5]{Central South University, Changsha 410083, China}
+
+\affil*[6]{Central South University, Changsha 410083, China}
+
+\abstract{\input{sections/0_abstract}}
+
+
+
+\maketitle
+
+\input{sections/1_introduction}
+\input{sections/2_results}
+\input{sections/3_discussion}
+\input{sections/4_methods}
+\input{sections/5_data_code}
+
+\bibliography{references}
+
+\end{document}

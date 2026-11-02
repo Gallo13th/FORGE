@@ -1,0 +1,49 @@
+{
+  "title": "Figure 1: Interpretable geometric feature framework for RNA inverse folding",
+  "canvas": {"width": 960, "height": 580},
+  "style": {
+    "font_family": "Times New Roman, serif",
+    "font_size": 13,
+    "bg_color": "#FFFFFF",
+    "palette": ["#648FFF", "#785EF0", "#DC267F", "#FE6100", "#009E73", "#EFF6FF", "#FEF3C7", "#FEE2E2"]
+  },
+  "groups": [
+    {"id": "g_pipeline", "label": "Feature Extraction & Prediction Pipeline", "node_ids": ["atom_input", "knn_graph", "node_feats", "edge_feats", "aggregate", "xgboost", "output"], "fill": "#EFF6FF", "stroke": "#93C5FD", "padding": 22},
+    {"id": "g_results", "label": "Key Findings (Post-2025 OOD)", "node_ids": ["bar_xgb", "bar_rdesign", "bar_ribo", "bar_grnade", "bar_random", "scatter_box"], "fill": "#FEF3C7", "stroke": "#FCD34D", "padding": 22}
+  ],
+  "nodes": [
+    {"id": "atom_input", "label": "7-Atom Backbone\n(P,O5',C5',C4',C3',O3',N1/N9)", "x": 85, "y": 170, "width": 130, "height": 58, "shape": "rounded", "fill": "#DBEAFE", "stroke": "#3B82F6", "font_size": 11},
+    {"id": "knn_graph", "label": "k-NN Graph\n(k=32, C4' centroid)", "x": 85, "y": 280, "width": 130, "height": 54, "shape": "rounded", "fill": "#DBEAFE", "stroke": "#3B82F6", "font_size": 11},
+    {"id": "node_feats", "label": "Node Features\n(211 dim)\nBonds, angles,\ndihedrals, spatial", "x": 260, "y": 155, "width": 125, "height": 68, "shape": "rect", "fill": "#D1FAE5", "stroke": "#10B981", "font_size": 10},
+    {"id": "edge_feats", "label": "Edge Features\n(362 dim)\nRBF dist., pos. enc.,\nRosetta features", "x": 260, "y": 280, "width": 125, "height": 64, "shape": "rect", "fill": "#D1FAE5", "stroke": "#10B981", "font_size": 10},
+    {"id": "aggregate", "label": "Mean / Std\nAggregation\n935-dim vector", "x": 430, "y": 215, "width": 120, "height": 58, "shape": "rounded", "fill": "#C7D2FE", "stroke": "#6366F1", "font_size": 11},
+    {"id": "xgboost", "label": "XGBoost\nClassifier\n500 trees", "x": 550, "y": 215, "width": 100, "height": 58, "shape": "rounded", "fill": "#FEE2E2", "stroke": "#EF4444", "font_size": 11},
+    {"id": "output", "label": "Per-Nucleotide\nPrediction\nA / C / G / U", "x": 695, "y": 170, "width": 110, "height": 58, "shape": "rounded", "fill": "#FEF3C7", "stroke": "#F59E0B", "font_size": 11, "text_color": "#92400E"},
+    {"id": "shap", "label": "SHAP\nInterpretability\nWhy this nt?", "x": 695, "y": 280, "width": 110, "height": 54, "shape": "rounded", "fill": "#FEF3C7", "stroke": "#F59E0B", "font_size": 11, "text_color": "#92400E"},
+
+    {"id": "bar_title", "label": "", "x": 870, "y": 72, "width": 1, "height": 1, "shape": "rounded", "fill": "#FFFFFF00", "stroke": "#FFFFFF00"},
+
+    {"id": "bar_xgb", "label": "XGBoost\n63.1%", "x": 870, "y": 120, "width": 70, "height": 58, "shape": "rounded", "fill": "#648FFF", "stroke": "#648FFF", "text_color": "#FFFFFF", "font_size": 11},
+    {"id": "bar_rdesign", "label": "RDesign\n41.4%", "x": 870, "y": 190, "width": 70, "height": 52, "shape": "rounded", "fill": "#785EF0", "stroke": "#785EF0", "text_color": "#FFFFFF", "font_size": 10},
+    {"id": "bar_ribo", "label": "RiboDiff\n32.8%", "x": 870, "y": 252, "width": 70, "height": 48, "shape": "rounded", "fill": "#DC267F", "stroke": "#DC267F", "text_color": "#FFFFFF", "font_size": 10},
+    {"id": "bar_grnade", "label": "gRNAde\n29.7%", "x": 870, "y": 308, "width": 70, "height": 44, "shape": "rounded", "fill": "#FE6100", "stroke": "#FE6100", "text_color": "#FFFFFF", "font_size": 10},
+    {"id": "bar_random", "label": "Random\n25.0%", "x": 870, "y": 355, "width": 70, "height": 32, "shape": "rounded", "fill": "#BBBBBB", "stroke": "#999999", "text_color": "#666666", "font_size": 9},
+
+    {"id": "scatter_box", "label": "Per-Position Analysis\nModel CE vs. Rfam Entropy\nPearson r ≈ 0\n→ 7-atom bottleneck", "x": 870, "y": 420, "width": 145, "height": 72, "shape": "rect", "fill": "#FEF3C7", "stroke": "#F59E0B", "font_size": 11}
+  ],
+  "edges": [
+    {"from": "atom_input", "to": "knn_graph", "label": "Construct", "style": "solid", "color": "#3B82F6"},
+    {"from": "knn_graph", "to": "node_feats", "label": "Compute", "style": "solid", "color": "#3B82F6"},
+    {"from": "knn_graph", "to": "edge_feats", "label": "Compute", "style": "solid", "color": "#3B82F6"},
+    {"from": "node_feats", "to": "aggregate", "label": "211d", "style": "solid", "color": "#6366F1"},
+    {"from": "edge_feats", "to": "aggregate", "label": "362×2d", "style": "solid", "color": "#6366F1"},
+    {"from": "aggregate", "to": "xgboost", "label": "935d", "style": "solid", "color": "#EF4444"},
+    {"from": "xgboost", "to": "output", "label": "Classify", "style": "solid", "color": "#EF4444"},
+    {"from": "xgboost", "to": "shap", "label": "Explain", "style": "dashed", "color": "#F59E0B"}
+  ],
+  "labels": [
+    {"text": "Temporal OOD (Post-2025)", "x": 868, "y": 82, "font_size": 13, "color": "#333333", "anchor": "middle"},
+    {"text": "Sequence Recovery", "x": 868, "y": 97, "font_size": 11, "color": "#666666", "anchor": "middle"},
+    {"text": "Random: 25%", "x": 868, "y": 370, "font_size": 10, "color": "#999999", "anchor": "middle"}
+  ]
+}

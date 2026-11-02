@@ -1,0 +1,114 @@
+\section{Methods}
+
+\subsection{Data sources, splits and estimand}
+RNA chains and metadata were obtained from the Protein Data Bank (PDB) and parsed
+from mmCIF/PDB files; residues with unambiguous A/C/G/U labels were retained.
+The locked manifest contains 13,251 pre-2025 training chains, 3,293 validation
+chains, 2,860 pre-2025 cluster-held-out test chains and 4,135 chains deposited
+from 1 January 2025 to the local snapshot (291,331 A/C/G/U positions). Of 4,197
+post-2025 metadata chains, 62 were excluded for having fewer than five unambiguous
+positions. Because 31\% of post-2025 chains share an exact training sequence,
+recovery is reported for exact repeats, sequence-novel chains and identity strata.
+CD-HIT at 80\% identity was used for pre-2025 clustering; 164 cluster IDs (398
+chains) cross the temporal boundary, and a cluster-disjoint estimate is reported.
+Rfam labels were used only for stratified analysis, never as model inputs.
+
+Throughout, ``nucleotide predictability'' means the probability that a specified
+learner recovers the native nucleotide from representation $R$ under training
+distribution $D$. It is an operational, model-based estimand, not a conditional
+entropy, a unique sequence determination or a model-independent information
+measure. Exact-sequence, identity-stratified and family-disjoint splits separate
+memorisation and family transfer from residual prediction error.
+
+\subsection{Backbone representation and model}
+Each nucleotide is represented by seven atoms (P, O5$'$, C5$'$, C4$'$, C3$'$,
+O3$'$ and N1/N9). From these coordinates we compute 935 interpretable descriptors:
+247 node features (intra-nucleotide geometry, glycosidic and backbone torsions,
+local environment) and 344 edge features (base-pairing, stacking and
+inter-nucleotide geometry), pooled to 688 position-level values and concatenated
+to 935 dimensions (Supplementary Table~S3). Residues are connected in a
+$k=32$ nearest-neighbour graph; edges carry the 344 geometric descriptors plus
+distance/RBF encodings. An XGBoost classifier (600 trees, depth 6, learning rate
+0.05, early stopping on the validation set) maps the 935-dimensional position
+representation to A/C/G/U. Missing-atom coordinates were zero-filled; atom-channel
+and rotation controls are described below and in Supplementary Information.
+
+\subsection{Baselines, representation controls and leakage audits}
+Public inverse-folding baselines (gRNAde, RiboDiffusion, RDesign) were run on the
+same backbones and evaluated with the same position masks. A nearest-neighbour
+classifier in the 935-dimensional space, 6-atom and 5-atom representations, a
+canonicalised-frame model, a rotation-controlled model and atom-channel masks were used to test
+whether recovery depends on the absolute coordinate frame or on a single atom channel. The
+canonicalised-frame model uses residue-local frames and achieved 99.6\% invariance
+under rotation at a cost of about 2.4 percentage points. Three leakage audits are
+used: exact sequence match, CD-HIT identity strata and family-disjoint splits.
+The in-domain reference is trained on post-2025 chains under a sequence- and
+PDB-disjoint split that allows Rfam families to cross; the family-disjoint variant
+additionally holds out entire test families, whereas the temporal model trains only
+on pre-2025 chains. Additional controls include a dummy anchor and a model
+retrained without the 112 rotation-dependent features. Label-shuffle and
+zeroed-feature controls are pipeline sanity checks, not tests of train/test homology.
+
+\subsection{Calibration, abstention and threshold transport}
+Confidence is the maximum predicted class probability. Expected calibration error
+(ECE) uses ten equal-width bins over the full 4,135-chain temporal set; Brier score,
+negative log-likelihood and reliability curves are reported. Pooled abstention
+removes the least-confident positions globally. Per-chain abstention removes the
+least-confident fraction of each chain until retained accuracy reaches 90\%;
+chains with fewer than five positions are excluded. A confidence threshold was
+selected on the first 1,000 pre-2025 validation chains (54,166 positions after
+cache/length filtering) as the smallest 0.01-grid value retaining at least 1,000
+positions at $\ge$90\% selective accuracy. That threshold was applied unchanged to
+post-2025 all/repeat/non-repeat populations; PDB-clustered bootstrap (1,000
+resamples over 4,135 chains) gives grouped uncertainty. The threshold is a
+model/protocol-specific operating point and is not claimed to transport to novel
+RNA.
+
+\subsection{Task-specific readouts and labels}
+Nucleotide identity uses the A/C/G/U label. Base-pair state uses DSSR
+paired/unpaired labels on DSSR-eligible positions (182,338 positions). Solvent
+exposure uses full-atom Shrake--Rupley relative SASA as a continuous label; the
+model sees only the seven-atom backbone, so this is a packing/accessibility proxy,
+not a chemical measurement. Reactivity uses the RibonanzaNet-inferred DMS target
+(299,074 positions), not measured DMS. Base stacking uses a full-atom base-plane
+label: a residue is stacked when its base-plane centroid is within 6~\AA{} and its
+sign-aligned normal within 35$^\circ$ and 3.5~\AA{} vertical offset of a neighbour;
+positions without a valid base plane are masked. Distance and angle variations alter
+$<$0.5\% of labels, whereas a $\pm$0.5~\AA{} vertical offset alters 22--61\%, so stacking is treated as
+exploratory. Secondary-structure class uses DSSR dot-bracket labels mapped to
+loop/paired/pseudoknot, requiring exact residue-length agreement (163,395
+positions, 2,138 chains); class-balanced weights are used and pseudoknot F1 is
+reported explicitly. The DSSR bracket layer is not equivalent to all pseudoknot
+participation.
+
+\subsection{Design and context analyses}
+Compatibility was tested by ranking native sequences above composition-preserving
+and secondary-structure shuffles, gRNAde/RiboDiffusion designs and compensatory
+pair-swap mutants (native-above-decoy AUC). In the OpenKnot benchmark, 8,125
+designs across 21 puzzles were scored with frozen FORGE CE; within-puzzle ranks are
+normalised by puzzle size, and target-held-out performance is evaluated by fitting
+score $\sim$ CE on other puzzles. A deduplicated held-out baseline uses
+MFE+GC+length (7,837 unique puzzle/sequence/method/round keys) with and without
+CE. AF3 forward folding comprised four constructs (10ZT, 10ZU, 11EH and 11AG) with true,
+FORGE-derived and RNet-refined classes, including scaffolded and free/dimer variants
+where applicable. Because three of four true controls also fail, the assay is reported
+only as AF3 consistency, not physical foldability. Ligand-context analyses
+use 200 post-2025 ligand-annotated chains with in-range A/C/G/U joins and
+PDB-clustered bootstrap; residue-ID-level contacts, protein/assembly burial and
+modifications are stated boundaries. NMR analyses correlate cached single-structure
+confidence with mean P-atom displacement and include a two-ensemble per-conformer
+pilot (1A60/1BYJ, 70 mapped positions, pre-2025).
+
+\subsection{Feature importance, strata and statistics}
+Marginal permutation importance (50 shuffles) measures the relative metric drop
+when a descriptor group is permuted in the frozen model. Grouped SHAP uses 5,000
+positions per task and sums absolute SHAP values within ontology groups.
+Leave-one-group-out retraining removes each group and reports the recovery cost.
+Family, resolution, method and length strata use PDB-clustered OLS with BH
+correction within declared families; resolution is also tested with splines,
+quadratic terms, X-ray-only slopes and family interactions. Bootstrap intervals use 1,000 resamples; calibration uses ten equal-width bins
+and reports Brier score and NLL.
+Reported intervals are bootstrap or model-based 95\% CIs; tests are two-sided. Analyses were performed in
+Python 3.10 with XGBoost, scikit-learn, statsmodels, DSSR, ViennaRNA and PyMOL;
+all source data, models and scripts are archived as described in Data and Code
+availability.

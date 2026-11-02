@@ -1,0 +1,66 @@
+% === Table 1: Main Results — All Models × All Test Sets ===
+\begin{table}[t]
+\centering
+\caption{Sequence recovery (\%) across all evaluation benchmarks. Internal: held-out pre-2025 clusters. OOD: all post-2025 chains. Das 14: standard benchmark (clean chains only). RD-CV: RiboDiffusion 8-fold cross-validation (clean chains, das\_split model). Best result per column in \textbf{bold}.}
+\label{tab:main_results}
+\begin{tabular}{lcccc}
+\toprule
+\bfseries Model & \bfseries Pre-2025 Internal & \bfseries Post-2025 OOD & \bfseries Das 14 (clean) & \bfseries RD-CV (clean) \\
+\midrule
+XGBoost (ours) & \bf{72.55} & \bf{64.10} & \bf{55.72} & \bf{84.23} \\
+RiboSphere\tnote{*} & --- & --- & 63.0 & --- \\
+RDesign & --- & 41.44 & 41.6 & --- \\
+RiboDiffusion & --- & 32.79 & 53.3 & --- \\
+gRNAde & --- & 29.67 & 52.9 & --- \\
+Random (4-class) & 25.0 & 25.0 & 25.0 & 25.0 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item[*] RiboSphere results from Zhang et al.\ (2026); not evaluated on post-2025 or RD-CV.
+\end{tablenotes}
+\end{table}
+
+
+% === Table 2: Per-Family Results (Post-2025 OOD, Rfam-Annotated) ===
+\begin{table}[t]
+\centering
+\caption{Per-family sequence recovery (\%) on post-2025 OOD Rfam-annotated chains. Families with $\geq 10$ annotated chains shown. Best per family in \textbf{bold}.}
+\label{tab:per_family}
+\begin{tabular}{lrrrrr}
+\toprule
+\bfseries Rfam Family & \bfseries Chains & \bfseries XGBoost (ours) & \bfseries RDesign & \bfseries gRNAde & \bfseries RiboDiffusion \\
+\midrule
+5\_8S\_rRNA  & 146 & \bf{94.4} & 41.9 & 27.8 & 50.9 \\
+5S\_rRNA    & 365 & \bf{88.1} & 68.0 & 27.4 & 53.6 \\
+tRNA        & 540 & \bf{75.7} & 61.2 & 56.0 & 39.6 \\
+Fungi\_U3   &  11 & \bf{72.1} & 46.9 & 27.4 & 32.3 \\
+AdoCbl-II   &  29 & \bf{64.4} & 58.6 & 38.1 & 25.0 \\
+Intron\_gpI  &  12 & \bf{58.0} & 41.4 & 26.2 & 24.2 \\
+RNaseP\_bact\_b & 78 & \bf{49.9} & 43.9 & 18.2 & 18.4 \\
+ROOL        &  39 & \bf{43.3} & 41.7 & 27.5 & 26.2 \\
+GOLLD       &  32 & \bf{43.1} & 41.1 & 24.9 & 26.1 \\
+Purine      &  22 & 37.4 & \bf{38.2} & 30.2 & 26.6 \\
+K10\_TLS     &  12 & 29.0 & 15.9 & \bf{42.9} & \bf{42.9} \\
+\midrule
+\emph{Annotated mean} & 1,286 & \emph{74.3} & --- & --- & --- \\
+\emph{Unannotated mean} & 2,849 & \emph{57.5} & --- & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% === Table 3: Chain ID Mapping Conventions ===
+\begin{table}[t]
+\centering
+\caption{RNA chain naming conventions used across inverse folding methods and our bidirectional mapping coverage.}
+\label{tab:chain_mapping}
+\begin{tabular}{lcl}
+\toprule
+\bfseries System & \bfseries Format & \bfseries Example \\
+\midrule
+Ours (pdb\_head) & \texttt{\{PDB\}\_\{H/L/X\}\_\{CHAIN\}} & \texttt{1F27\_H\_A} \\
+RiboDiffusion & \texttt{\{pdb\_id\}\_\{CHAIN\}} & \texttt{1f27\_A} \\
+gRNAde & \texttt{\{PDB\}\_\{model\}\_\{CHAIN1\}-CHAIN2-...} & \texttt{3B58\_1\_B-C-A} \\
+\bottomrule
+\end{tabular}
+\end{table}

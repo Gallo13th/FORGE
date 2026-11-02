@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" width="960" height="580" font-family="Times New Roman, serif">
+  <rect width="960" height="580" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arrow-default" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#555555"/>
+    </marker>
+    <marker id="arrow-c0" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#648FFF"/>
+    </marker>
+    <marker id="arrow-c1" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#785EF0"/>
+    </marker>
+    <marker id="arrow-c2" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#DC267F"/>
+    </marker>
+    <marker id="arrow-c3" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#FE6100"/>
+    </marker>
+    <marker id="arrow-c4" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#009E73"/>
+    </marker>
+    <marker id="arrow-c5" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#EFF6FF"/>
+    </marker>
+    <marker id="arrow-c6" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#FEF3C7"/>
+    </marker>
+    <marker id="arrow-c7" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+      <polygon points="0 0, 8 4, 0 8" fill="#FEE2E2"/>
+    </marker>
+  </defs>
+  <rect x="-2.0" y="99.0" width="774.0" height="235.0" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1" rx="8"/>
+  <text x="6.0" y="115.0" font-size="11" fill="#999999" font-weight="bold">Feature Extraction &amp; Prediction Pipeline</text>
+  <rect x="775.5" y="69.0" width="189.0" height="409.0" fill="#FEF3C7" stroke="#FCD34D" stroke-width="1" rx="8"/>
+  <text x="783.5" y="85.0" font-size="11" fill="#999999" font-weight="bold">Key Findings (Post-2025 OOD)</text>
+  <path d="M 85.0,199.0 L 85.0,253.0" stroke="#3B82F6" stroke-width="2" fill="none" marker-end="url(#arrow-default)"/>
+  <rect x="54.0" y="208.0" width="62.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="85.0" y="220.0" font-size="10" fill="#777777" text-anchor="middle">Construct</text>
+  <path d="M 122.8,253.0 L 212.4,189.0" stroke="#3B82F6" stroke-width="2" fill="none" marker-end="url(#arrow-default)"/>
+  <rect x="142.6" y="203.0" width="50.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="167.6" y="215.0" font-size="10" fill="#777777" text-anchor="middle">Compute</text>
+  <path d="M 150.0,280.0 L 197.5,280.0" stroke="#3B82F6" stroke-width="2" fill="none" marker-end="url(#arrow-default)"/>
+  <rect x="148.8" y="262.0" width="50.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="173.8" y="274.0" font-size="10" fill="#777777" text-anchor="middle">Compute</text>
+  <path d="M 322.5,177.1 L 370.0,193.8" stroke="#6366F1" stroke-width="2" fill="none" marker-end="url(#arrow-default)"/>
+  <rect x="330.2" y="167.4" width="32.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="346.2" y="179.4" font-size="10" fill="#777777" text-anchor="middle">211d</text>
+  <path d="M 322.5,256.1 L 370.0,237.9" stroke="#6366F1" stroke-width="2" fill="none" marker-end="url(#arrow-default)"/>
+  <rect x="324.2" y="229.0" width="44.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="346.2" y="241.0" font-size="10" fill="#777777" text-anchor="middle">362×2d</text>
+  <path d="M 490.0,215.0 L 500.0,215.0" stroke="#EF4444" stroke-width="2" fill="none" marker-end="url(#arrow-default)"/>
+  <rect x="479.0" y="197.0" width="32.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="495.0" y="209.0" font-size="10" fill="#777777" text-anchor="middle">935d</text>
+  <path d="M 600.0,199.5 L 640.0,187.1" stroke="#EF4444" stroke-width="2" fill="none" marker-end="url(#arrow-default)"/>
+  <rect x="592.0" y="175.3" width="56.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="620.0" y="187.3" font-size="10" fill="#777777" text-anchor="middle">Classify</text>
+  <path d="M 600.0,237.4 L 640.0,255.3" stroke="#F59E0B" stroke-width="2" fill="none" marker-end="url(#arrow-default)" stroke-dasharray="8,4"/>
+  <rect x="595.0" y="228.4" width="50.0" height="16" fill="#FFFFFF" rx="3" opacity="0.85"/>
+  <text x="620.0" y="240.4" font-size="10" fill="#777777" text-anchor="middle">Explain</text>
+  <rect x="20.0" y="141.0" width="130.0" height="58.0" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2" rx="8"/>
+  <text x="85.0" y="167.3" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">7-Atom Backbone</text>
+  <text x="85.0" y="180.3" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">(P,O5',C5',C4',C3',O3',N1/N9)</text>
+  <rect x="20.0" y="253.0" width="130.0" height="54.0" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2" rx="8"/>
+  <text x="85.0" y="277.4" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">k-NN Graph</text>
+  <text x="85.0" y="290.4" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">(k=32, C4' centroid)</text>
+  <rect x="197.5" y="121.0" width="125.0" height="68.0" fill="#D1FAE5" stroke="#10B981" stroke-width="2" rx="0"/>
+  <text x="260.0" y="140.5" font-size="10" fill="#333333" text-anchor="middle" font-weight="bold">Node Features</text>
+  <text x="260.0" y="152.5" font-size="10" fill="#333333" text-anchor="middle" font-weight="bold">(211 dim)</text>
+  <text x="260.0" y="164.5" font-size="10" fill="#333333" text-anchor="middle" font-weight="bold">Bonds, angles,</text>
+  <text x="260.0" y="176.5" font-size="10" fill="#333333" text-anchor="middle" font-weight="bold">dihedrals, spatial</text>
+  <rect x="197.5" y="248.0" width="125.0" height="64.0" fill="#D1FAE5" stroke="#10B981" stroke-width="2" rx="0"/>
+  <text x="260.0" y="265.5" font-size="10" fill="#333333" text-anchor="middle" font-weight="bold">Edge Features</text>
+  <text x="260.0" y="277.5" font-size="10" fill="#333333" text-anchor="middle" font-weight="bold">(362 dim)</text>
+  <text x="260.0" y="289.5" font-size="10" fill="#333333" text-anchor="middle" font-weight="bold">RBF dist., pos. enc.,</text>
+  <text x="260.0" y="301.5" font-size="10" fill="#333333" text-anchor="middle" font-weight="bold">Rosetta features</text>
+  <rect x="370.0" y="186.0" width="120.0" height="58.0" fill="#C7D2FE" stroke="#6366F1" stroke-width="2" rx="8"/>
+  <text x="430.0" y="205.8" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">Mean / Std</text>
+  <text x="430.0" y="218.8" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">Aggregation</text>
+  <text x="430.0" y="231.8" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">935-dim vector</text>
+  <rect x="500.0" y="186.0" width="100.0" height="58.0" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" rx="8"/>
+  <text x="550.0" y="205.8" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">XGBoost</text>
+  <text x="550.0" y="218.8" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">Classifier</text>
+  <text x="550.0" y="231.8" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">500 trees</text>
+  <rect x="640.0" y="141.0" width="110.0" height="58.0" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="8"/>
+  <text x="695.0" y="160.8" font-size="11" fill="#92400E" text-anchor="middle" font-weight="bold">Per-Nucleotide</text>
+  <text x="695.0" y="173.8" font-size="11" fill="#92400E" text-anchor="middle" font-weight="bold">Prediction</text>
+  <text x="695.0" y="186.8" font-size="11" fill="#92400E" text-anchor="middle" font-weight="bold">A / C / G / U</text>
+  <rect x="640.0" y="253.0" width="110.0" height="54.0" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="8"/>
+  <text x="695.0" y="270.9" font-size="11" fill="#92400E" text-anchor="middle" font-weight="bold">SHAP</text>
+  <text x="695.0" y="283.9" font-size="11" fill="#92400E" text-anchor="middle" font-weight="bold">Interpretability</text>
+  <text x="695.0" y="296.9" font-size="11" fill="#92400E" text-anchor="middle" font-weight="bold">Why this nt?</text>
+  <rect x="869.5" y="71.5" width="1.0" height="1.0" fill="#555555" stroke="#555555" stroke-width="2" rx="8"/>
+  <rect x="835.0" y="91.0" width="70.0" height="58.0" fill="#648FFF" stroke="#648FFF" stroke-width="2" rx="8"/>
+  <text x="870.0" y="117.3" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="bold">XGBoost</text>
+  <text x="870.0" y="130.3" font-size="11" fill="#FFFFFF" text-anchor="middle" font-weight="bold">63.1%</text>
+  <rect x="835.0" y="164.0" width="70.0" height="52.0" fill="#785EF0" stroke="#785EF0" stroke-width="2" rx="8"/>
+  <text x="870.0" y="187.5" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="bold">RDesign</text>
+  <text x="870.0" y="199.5" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="bold">41.4%</text>
+  <rect x="835.0" y="228.0" width="70.0" height="48.0" fill="#DC267F" stroke="#DC267F" stroke-width="2" rx="8"/>
+  <text x="870.0" y="249.5" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="bold">RiboDiff</text>
+  <text x="870.0" y="261.5" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="bold">32.8%</text>
+  <rect x="835.0" y="286.0" width="70.0" height="44.0" fill="#FE6100" stroke="#FE6100" stroke-width="2" rx="8"/>
+  <text x="870.0" y="305.5" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="bold">gRNAde</text>
+  <text x="870.0" y="317.5" font-size="10" fill="#FFFFFF" text-anchor="middle" font-weight="bold">29.7%</text>
+  <rect x="835.0" y="339.0" width="70.0" height="32.0" fill="#BBBBBB" stroke="#999999" stroke-width="2" rx="8"/>
+  <text x="870.0" y="352.6" font-size="9" fill="#666666" text-anchor="middle" font-weight="bold">Random</text>
+  <text x="870.0" y="363.6" font-size="9" fill="#666666" text-anchor="middle" font-weight="bold">25.0%</text>
+  <rect x="797.5" y="384.0" width="145.0" height="72.0" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="0"/>
+  <text x="870.0" y="404.4" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">Per-Position Analysis</text>
+  <text x="870.0" y="417.4" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">Model CE vs. Rfam Entropy</text>
+  <text x="870.0" y="430.4" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">Pearson r ≈ 0</text>
+  <text x="870.0" y="443.4" font-size="11" fill="#333333" text-anchor="middle" font-weight="bold">→ 7-atom bottleneck</text>
+  <text x="868.0" y="82.0" font-size="13" fill="#333333" text-anchor="middle">Temporal OOD (Post-2025)</text>
+  <text x="868.0" y="97.0" font-size="11" fill="#666666" text-anchor="middle">Sequence Recovery</text>
+  <text x="868.0" y="370.0" font-size="10" fill="#999999" text-anchor="middle">Random: 25%</text>
+</svg>

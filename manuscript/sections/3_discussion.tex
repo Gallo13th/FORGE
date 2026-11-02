@@ -1,0 +1,53 @@
+\section{Discussion}
+
+Native sequence recovery is often treated as a unitary measure of inverse-folding capability, yet a single percentage conflates memorisation, homology recognition and genuine geometric inference. By decomposing recovery and linking it directly to auxiliary structural readouts and experimental design audits, FORGE separates three questions that benchmark averages obscure: what a model recovers, which structural properties the backbone actually constrains and what an in silico score establishes about a designed RNA.
+
+First, training familiarity and family overlap are major determinants of raw recovery metrics. Within the 64.6\% temporal aggregate, performance spans 87.1\% on exact repeats, 55.1\% on sequence-novel chains and 48.9\% below 80\% sequence identity—a value consistent with the 50.4\% recovery in our separate family-disjoint evaluation, compared with 70.0\% when Rfam families cross the split. These steep gradients argue for a disaggregated reporting standard in which corpus-wide recovery is always accompanied by exact-repeat, sequence-novel and family-disjoint breakdowns, with sequence identity and cluster overlap explicitly declared. The resulting profile distinguishes recognition of
+familiar molecules from transfer to unfamiliar RNA and makes the composition
+of a benchmark part of its interpretation.
+
+Second, a single geometric representation captures a broad spectrum of structural properties. Atom-feature-removal controls show that the sugar--phosphate trace alone retains substantial nucleotide-discriminating signal, while the full descriptor set accurately predicts base pairing, stacking and solvent exposure. Feature attribution connects nucleotide identity and pairing
+to inter-nucleotide geometry, and exposure to a distributed packing signal.
+The weaker reactivity-proxy association and limited pseudoknot readout
+identify priorities for extending the representation. Each task retains its
+own label definition and metric; together they form a task-specific map of
+backbone predictability rather than a common quantitative information scale.
+
+Confidence makes this map actionable at residue resolution. Selective
+prediction identifies high-accuracy subsets, while chain-level abstention
+and threshold-transport analyses reveal where a pooled operating point
+ceases to be reliable. The weak association of confidence with pairing, exposure and ensemble displacement supports
+interpreting it as a readout of base-call reliability rather than a generic
+structural score. The 11AG interface further shows that assembly-associated
+errors can occur at confidence levels comparable to those of intrachain positions. This
+combination supports using FORGE to prioritise residue assignments, focus
+density inspection and select positions for full-atom refinement,
+evolutionary analysis or chemical probing~\citep{zubradt2017dms}.
+
+Third, geometric compatibility, forward-folding consistency and experimental outcomes constitute non-interchangeable lines of evidence in RNA design. Although FORGE cross-entropy cleanly separates native sequences from multiple decoy classes, the RDesign exception and the modest, target-dependent gains on the OpenKnot benchmark show that decoy discrimination does not automatically translate into a prospective ranker of experimental success. The solved AI-designed
+pseudoknots provide a complementary test: successful structure generation can coexist with
+limited recovery of the designed sequence under standard inverse-folding
+inference. AlphaFold~3 recovers the experimental fold for only one of four
+true constructs, and none of the evaluated FORGE-derived or RNet-refined AF3
+models yields an AF3-consistent fold in this set. These positive experimental controls locate
+the disagreement in the computational assessment and leave physical
+foldability to independent experimental validation. Design evaluation should
+therefore report compatibility, forward-model agreement and experimental
+structural or functional evidence as separate endpoints. This separation
+preserves both the achievement of generating a solved RNA structure and the
+distinct challenge of explaining it computationally.
+
+The representation controls support this interpretation under a canonicalised
+coordinate convention. The canonicalised-frame model recovers 62.3\% with
+99.6\% prediction agreement and reproduces the recovery decomposition at
+a cost of 2.35~pp. The original-frame sensitivity and atom-channel masks
+define what these controls measure: robustness of the central contrasts and
+reliance on available descriptors. They leave a fully invariant reduced-atom
+featuriser as a future extension. Likewise, the approximately 50\% recovery in
+the divergent and family-disjoint evaluations is an empirical result of the
+tested representation and learners; its residual error combines Bayes
+ambiguity, feature loss and model error.
+
+The boundaries of the current study point directly to the next experiments. Pretrained baseline comparisons retain differences in training data and representation, and the auxiliary tasks rely on heterogeneous labels—including a predicted reactivity target and a SASA readout that reflects coordinate packing. Similarly, the ligand and ensemble analyses motivate explicit context modelling without establishing causal ligand effects or validated dynamics predictions (with protein-proximal contacts not analysed here), while the AF3 and 50-chain decoy evaluations remain bounded case studies and retrospective strata retain composition confounding. Addressing these limits will require matched-training benchmarks, experimental chemical probing and prospective design validation.
+
+FORGE provides a quantitative baseline for this next phase. Incorporating ligands, ions, chemical modifications, assembly interfaces and conformational ensembles as explicitly testable layers will connect static backbone readouts to the full molecular environment. Paired with thermodynamic secondary-structure models~\citep{lorenz2011viennarna}, novelty-aware splits and direct experimental readouts, this audit framework can help ensure that RNA design models are judged by what they truly recover, where they generalise and which physical evidence supports their designs.

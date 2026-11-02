@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the latest Zenodo release."
+title: "FORGE: RNA backbone sequence-recovery diagnostics"
+version: "0.3.0"
+date-released: "2026-11-02"
+license: "MIT"
+doi: "10.5281/zenodo.21128513"
+url: "https://github.com/Gallo13th/FORGE"
+authors:
+  - family-names: Gow
+    given-names: Leighton
+    orcid: "https://orcid.org/0009-0004-5597-0781"
+    affiliation: "Huazhong University of Science and Technology"
+  - family-names: Li
+    given-names: Jintang
+    affiliation: "Institute of Artificial Intelligence, Xiamen University"
+  - family-names: Tan
+    given-names: Xianhan
+    affiliation: "Zhejiang University"
+  - family-names: Liang
+    given-names: Ke
+    affiliation: "National University of Defense Technology"
+  - family-names: Gui
+    given-names: Ning
+    affiliation: "Central South University"
+  - family-names: Luo
+    given-names: Binli
+    affiliation: "Central South University"
